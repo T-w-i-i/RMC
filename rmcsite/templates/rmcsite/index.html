@@ -1,0 +1,720 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Risk Management Centre</title>
+<!-- Stylesheets -->
+<link href="{% static 'rmcsite/css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'rmcsite/css/style.css' %}" rel="stylesheet">
+<link href="{% static 'rmcsite/css/responsive.css' %}" rel="stylesheet">
+
+<link rel="shortcut icon" href="{% static 'rmcsite/images/resource/strath.png' %}" type="image/x-icon">
+<link rel="icon" href="{% static 'rmcsite/images/resource/strath.png' %}" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<style>
+.our-team{
+    text-align: center;
+    margin-bottom: 100px;
+    z-index: 1;
+    position: relative;
+}
+.our-team .pic{
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+}
+.our-team .pic:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease 0s;
+}
+.our-team:hover .pic:after{ opacity: 1; }
+.our-team .pic img{
+    width: 100%;
+    height: auto;
+}
+.our-team .social{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    z-index: 1;
+    transition: all 0.5s ease 0s;
+}
+.our-team:hover .social{ opacity: 1; }
+.our-team .social li{ display: inline-block; }
+.our-team .social li a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    font-size: 15px;
+    color: #fff;
+    margin-right: 10px;
+    transition: all 0.5s ease 0s;
+}
+.our-team .social li a:hover{
+    background: #fff;
+    color: #000;
+}
+.our-team .team-content{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px dotted #ddd;
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    z-index: -1;
+    transition: all 0.5s ease 0s;
+}
+.our-team:hover .team-content{ border: 2px dotted #344f9f; }
+.our-team .team-info{
+    width: 100%;
+    color: red;
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+}
+.our-team .title{
+    font-size: 20px;
+    font-weight: 600;
+    color: red;
+    margin: 0 0 5px 0;
+    transition: all 0.5s ease 0s;
+}
+.our-team:hover .title{ color: #344f9f; }
+.our-team .post{
+    display: block;
+    font-size: 14px;
+    color: #344f9f;
+}
+</style>
+
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+
+
+
+    <!-- Main Header-->
+    <header class="main-header header-style-four">
+
+        <!-- Header Lower  -->
+    	<div class="header-lower">
+        	<div class="auto-container">
+            	<div class="outer-container clearfix">
+					<!-- Logo Box -->
+					<div class="pull-left logo-box">
+						<div class="logo"><a href="#"><img src="{% static 'rmcsite/images/resource/strath.png' %}" style="height: 100px; width: 100px;" alt="" title=""></a></div>
+					</div>
+					<!-- Nav Outer -->
+                    <div class="nav-outer clearfix">
+						<!-- Main Menu -->
+						<nav class="main-menu navbar-expand-md">
+							<div class="navbar-header">
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+
+							<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+								<ul class="navigation clearfix">
+									<li ><a href="#">Home</a></li>
+									<li ><a href="#about">About Us</a></li>
+									<li><a href="#team">Team</a></li>
+									<li><a href="#projects">Projects</a></li>
+									<li><a href="#contacts">Contact us</a></li>
+								</ul>
+							</div>
+
+						</nav>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+		<!--Sticky Header-->
+        <div class="sticky-header">
+        	<div class="auto-container">
+            	<!--Logo-->
+            	<div class="logo pull-left">
+                	<a href="#"><img src="{% static 'rmcsite/images/resource/strath.png' %}" style="height: 100px; width: 100px;" alt="" title=""></a>
+                </div>
+
+                <!--Right Col-->
+                <div class="right-col pull-right">
+                	<!-- Main Menu -->
+                    <nav class="main-menu navbar-expand-md">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
+                            <ul class="navigation clearfix">
+                              <li ><a style="margin-top: 20px;"href="#">Home</a></li>
+                              <li ><a style="margin-top: 20px;"href="#about">About Us</a></li>
+                              <li><a style="margin-top: 20px;"href="#team">Team</a></li>
+                              <li><a style="margin-top: 20px;"href="#projects">Projects</a></li>
+                              <li><a style="margin-top: 20px;"href="#contacts">Contact us</a></li>
+                            </ul>
+                        </div>
+                    </nav><!-- Main Menu End-->
+                </div>
+
+            </div>
+        </div>
+        <!--End Sticky Header-->
+
+    </header>
+    <!--End Main Header -->
+
+	<!--Main Slider-->
+    <section class="main-slider style-three">
+        <div class="main-slider-carousel owl-carousel owl-theme">
+
+            <div class="slide" style="background-image:url({% static 'rmcsite/images/main-slider/grid.jpg'%})">
+                <div class="auto-container">
+					<div class="content alternate">
+						<div class="title">RMC</div>
+						<h1 class="style-two">Risk Management Centre</h1>
+						<div class="text alternate">Established for the purpose of research, education, and outreach regarding risk and disaster management.</div>
+						<div class="btn-box">
+							<a href="#about" class="theme-btn btn-style-nine">Learn More <span class="icon flaticon-direction"></span></a>
+						</div>
+					</div>
+                </div>
+            </div>
+
+            <div class="slide" style="background-image:url({% static 'rmcsite/images/main-slider/grid.jpg' %})">
+                <div class="auto-container">
+					<div class="content alternate">
+						<div class="title">RMC</div>
+						<h1 class="style-two">Risk Management Centre</h1>
+						<div class="text alternate">Established for the purpose of research, education, and outreach regarding risk and disaster management.</div>
+						<div class="btn-box">
+							<a href="#about" class="theme-btn btn-style-nine">Learn More <span class="icon flaticon-direction"></span></a>
+						</div>
+					</div>
+                </div>
+            </div>
+
+        </div>
+	</section>
+
+	<!-- Services Section Seven-->
+	<section class="services-section-seven">
+		<div class="auto-container">
+			<div class="inner-container">
+				<div class="clearfix">
+
+					<!-- Services Block Ten -->
+					<div class="services-block-ten col-lg-4 col-md-6 col-sm-12">
+						<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+							<div class="large-icon flaticon-exam"></div>
+							<div class="upper-box">
+								<div class="icon-box">
+									<span class="icon flaticon-exam"></span>
+								</div>
+								<h4><a href="#">Research</a></h4>
+							</div>
+							<div class="text">RMC aims to do research on a continuous basis on financial risk management, and management of risk in the financial services industry. Initial research is to establish the current status of risk management by identifying the key risks that the Kenyan Financial Industry faces and the mitigation options.</div>
+						</div>
+					</div>
+
+					<!-- Services Block Ten -->
+					<div class="services-block-ten col-lg-4 col-md-6 col-sm-12" >
+						<div class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+							<div class="large-icon flaticon-student"></div>
+							<div class="upper-box">
+								<div class="icon-box">
+									<span class="icon flaticon-student"></span>
+								</div>
+								<h4><a href="#">Training</a></h4>
+							</div>
+							<div class="text">RMC helps organizations managing risk and/or disaster in curriculum design and development; executive workshops; training of trainers; employee and management training, individual and group coaching, etc.</div>
+						</div>
+					</div>
+
+					<!-- Services Block Ten -->
+					<div class="services-block-ten col-lg-4 col-md-12 col-sm-12">
+						<div class="inner-box wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+							<div class="large-icon flaticon-handshake"></div>
+							<div class="upper-box">
+								<div class="icon-box">
+									<span class="icon flaticon-handshake"></span>
+								</div>
+								<h4><a href="#">Consulting</a></h4>
+							</div>
+							<div class="text">RMC serves as a center for networking for continuous engagement and dissemination of educational and professional development resources for scholars and organizations, as well as to students, interested in risk and disaster management.</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Services Section Seven-->
+
+	<!-- About Section -->
+	<section id = "about"class="about-section brown">
+		<div class="auto-container">
+			<div class="row clearfix">
+
+				<!-- Content Column -->
+				<div class="content-column col-lg-6 col-md-12 col-sm-12">
+					<div class="inner-column">
+
+						<!-- Sec Title Two -->
+						<div class="sec-title-two brown">
+						<h1  class="style-two">About Us</h1>
+            <hr>
+
+						</div>
+
+						<div class="text">
+							<p>The Risk Management Centre (RMC), established in July 2014, is a Research and Consultancy Centre focusing on risk management and disaster management under a common platform of scholarly research and technical expertise. We are unique in the sense that we are the first of a kind in the region to address risk and disaster management issues under one roof. The RMC focuses on risk management covering various aspects at the micro and institutional levels of market and industry risk, their modelling and management. Disaster management is the second-arm of the centre which involves monitoring and managing natural as well as man-made disasters such as flooding, famine, health epidemics, political violence, etc. These two-arms of research on risk and disaster are founded on and share the common platform in the RMC, which comprises various important databases and a pool of scholarly and industrial experts for the monitoring and analysis of risk and disaster in the East and Central African region.
+              </p>
+
+						</div>
+
+
+
+					</div>
+				</div>
+
+				<!-- Video Column -->
+				<div class="video-column col-lg-6 col-md-12 col-sm-12">
+					<div class="inner-column">
+
+						<!--Video Box-->
+                        <div class="video-box">
+                            <figure class="image">
+                                <img src="{% static 'rmcsite/images/resource/risk.jpg'%}" alt="">
+                            </figure>
+
+                        </div>
+
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End About Section -->
+
+  <!-- Counter Section -->
+    <section class="counter-section" style="background-image:url({%static 'images/background/security.jpg'%})">
+      <div class="auto-container">
+        <!-- Fact Counter -->
+        <div class="fact-counter style-three">
+          <div class="row clearfix">
+
+            <!--Column-->
+            <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+              <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="icon-box">
+                  <span class="icon flaticon-start"></span>
+                </div>
+                <div class="count-outer count-box">
+                  <span class="count-text" data-speed="3000ms" data-stop="350">0</span>+
+                  <div class="counter-title">Completed Projects</div>
+                </div>
+              </div>
+            </div>
+
+            <!--Column-->
+            <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+              <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="icon-box">
+                  <span class="icon flaticon-like"></span>
+                </div>
+                <div class="count-outer count-box">
+                  <span class="count-text" data-speed="2000" data-stop="172">0</span>
+                  <div class="counter-title">Satisfied Clients</div>
+                </div>
+              </div>
+            </div>
+
+            <!--Column-->
+            <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+              <div class="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                <div class="icon-box">
+                  <span class="icon flaticon-student"></span>
+                </div>
+                <div class="count-outer count-box">
+                  <span class="count-text" data-speed="2000" data-stop="863">0</span>+
+                  <div class="counter-title">Trained individuals</div>
+                </div>
+              </div>
+            </div>
+
+            <!--Column-->
+            <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+              <div class="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+                <div class="icon-box">
+                  <span class="icon flaticon-creativity"></span>
+                </div>
+                <div class="count-outer count-box">
+                  <span class="count-text" data-speed="1500" data-stop="436">0</span>+
+                  <div class="counter-title">Ideas</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- Counter Section -->
+<br><br>
+
+<!-- Case Section -->
+<section id = 'projects'class="case-section alternate">
+  <div class="auto-container">
+    <!-- Sec Title Two -->
+    <div class="sec-title-two">
+      <div class="clearfix">
+        <div class="pull-left">
+          <div class="title">RMC</div>
+
+          <h1  class="style-two">Training Projects</h1>
+          <hr>
+
+        </div>
+        <div class="pull-right">
+          <div class="text">Getting started with R Programming |
+Survey Methodology with STATA by Dr. Yong Yoon |
+Training workshop on LATEX with Dr. Yoon. </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix">
+
+      <!-- Case Block -->
+      <div class="case-block style-two col-lg-4 col-md-6 col-sm-12">
+        <div class="inner-box">
+          <div class="image">
+            <img src="{% static 'rmcsite/images/resource/r.png' %}" alt="" />
+          </div>
+          <div class="title">Programming</div>
+          <h5><a href="#">Getting started with R Programming</a></h5>
+          <div class="text">Details About The Program</div>
+          <a href="#" class="arrow"><span class="flaticon-direction"></span></a>
+        </div>
+      </div>
+
+      <!-- Case Block -->
+      <div class="case-block style-two col-lg-4 col-md-6 col-sm-12">
+        <div class="inner-box">
+          <div class="image">
+            <img src="{% static 'rmcsite/images/resource/stata.png' %}" alt="" />
+          </div>
+          <div class="title">Finance</div>
+          <h5><a href="#">Survey Methodology with STATA by Dr. Yong Yoon.</a></h5>
+          <div class="text">Details About The Program</div>
+          <a href="#" class="arrow"><span class="flaticon-direction"></span></a>
+        </div>
+      </div>
+
+      <!-- Case Block -->
+      <div class="case-block style-two col-lg-4 col-md-12 col-sm-12">
+        <div class="inner-box">
+          <div class="image">
+            <img src="{% static 'rmcsite/images/resource/latex.png' %}" alt="" />
+          </div>
+          <div class="title">Programming</div>
+          <h5><a href="#">Training workshop on LATEX with Dr. Yoon.</a></h5>
+          <div class="text">Details About The Program</div>
+          <a href="#" class="arrow"><span class="flaticon-direction"></span></a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- End Case Section -->
+<!-- Team section -->
+
+    <div id = "team" class="container">
+      <div class="sec-title-two brown">
+      <h1 class="style-two">Meet The Team</h1>
+      <hr>
+
+      </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{% static 'rmcsite/images/resource/olukuru.jpeg' %}">
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="team-content">
+                    <div class="team-info">
+                        <h3 class="title">Dr John Olukuru</h3>
+                        <span class="post">Director</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{% static 'rmcsite/images/resource/michael.jpg' %}">
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="team-content">
+                    <div class="team-info">
+                        <h3 class="title">Michael Gichure</h3>
+                        <span class="post">IT Manager</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{% static 'rmcsite/images/resource/avatar.png' %}">
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="team-content">
+                    <div class="team-info">
+                        <h3 class="title">Gillian Kimundi</h3>
+                        <span class="post">Manager</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{% static 'rmcsite/images/resource/avatar.png' %}">
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="team-content">
+                    <div class="team-info">
+                        <h3 class="title">Ezekiel Macharia</h3>
+                        <span class="post">Executive Fellow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{% static 'rmcsite/images/resource/avatar.png' %}">
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="team-content">
+                    <div class="team-info">
+                        <h3 class="title">Carolyn Njenga</h3>
+                        <span class="post">Executive Fellow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{% static 'rmcsite/images/resource/avatar.png' %}">
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="team-content">
+                    <div class="team-info">
+                        <h3 class="title">Marian Chatoro</h3>
+                        <span class="post">Research Associate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!--Main Footer-->
+    <footer id = 'contacts'class="main-footer style-three">
+    	<div class="auto-container">
+        	<!--Widgets Section-->
+            <div class="widgets-section">
+            	<div class="row clearfix">
+
+                    <!--Column-->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+						<div class="row clearfix">
+
+                        	<!--Footer Column-->
+                            <div class="footer-column col-lg-7 col-md-6 col-sm-12">
+                                <div class="footer-widget logo-widget">
+									<div class="logo">
+										<a href="index.html"><img src="{%static 'images/sbs.png' %}" alt="" title=""></a>
+									</div>
+									<div class="text">DATA HAS A BETTER IDEA</div>
+									<ul class="list-style-two">
+                    <li><span class="icon fa fa-envelope"></span> jolukuru@strathmore.edu  </li>
+                    <li><span class="icon fa fa-envelope"></span> nmukami@strathmore.edu </li>
+                    <li><span class="icon fa fa-envelope"></span> mchataro@strathmore.edu  </li>
+										<li><span class="icon fa fa-envelope"></span> sfae@strathmore.edu</li>
+										<li><span class="icon fa fa-home"></span>Ole Sangale Road,<br> off Langata Road, in Madaraka Estate.</li>
+									</ul>
+								</div>
+							</div>
+
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                                <div class="footer-widget links-widget">
+									<h6 style="color: #fff; ">Links</h6><br>
+									<ul class="list-link">
+										<li><a href="#">Home</a></li>
+										<li><a href="#about">About Us</a></li>
+										<li><a href="#team">The Team</a></li>
+										<li><a href="#contact">Contact</a></li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<!--Column-->
+                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
+						<div class="row clearfix">
+
+                        	<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget links-widget">
+									<h6 style="color: #fff; ">Strathmore Faculties and Schools</h6><br>
+									<ul class="list-link">
+										<li><a href="http://www.fit.strathmore.edu/">Faculty of Information Technology</a></li>
+										<li><a href="http://sbs.strathmore.edu/">Strathmore Business School</a></li>
+										<li><a href="http://www.law.strathmore.edu/">Strathmore Law School</a></li>
+										<li><a href="http://www.shss.strathmore.edu/">School of Humanities and Social Sciences</a></li>
+										<li><a href="http://www.sgs.strathmore.edu/">School of Graduate Studies</a></li>
+                    <li><a href="https://www.strathmore.edu/soa/">School of Accountancy</a></li>
+                    <li><a href="http://www.sth.strathmore.edu/">School of Tourism and Hospitality</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<!--Footer Column-->
+                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div class="footer-widget gallery-widget">
+
+									<div class="logo"><a href="/"><img src="{% static 'rmcsite/images/resource/logo.png' %}" alt="" title=""></a></div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+    <hr style="color:#fff">
+		<!-- Footer Bottom -->
+		<div class="footer-bottom">
+			<div class="auto-container">
+				<div class="row clearfix">
+
+					<!-- Copyright Column -->
+					<div class="copyright-column col-lg-6 col-md-6 col-sm-12">
+						<div class="copyright">2019 &copy; All rights reserved by <a href="#">RMC  | Made by Martin</a></div>
+
+					</div>
+
+					<!-- Social Column -->
+					<div class="social-column col-lg-6 col-md-6 col-sm-12">
+						<ul>
+							<li class="follow">Follow us: </li>
+							<li><a href="#"><span class="fa fa-facebook-square"></span></a></li>
+							<li><a href="#"><span class="fa fa-twitter-square"></span></a></li>
+							<li><a href="#"><span class="fa fa-linkedin-square"></span></a></li>
+
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+</div>
+<!--End pagewrapper-->
+
+<script src="{% static 'rmcsite/js/jquery.js' %}"></script>
+<script src="{% static 'rmcsite/js/popper.min.js' %}"></script>
+<script src="{% static 'rmcsite/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'rmcsite/js/sticky.js' %}"></script>
+<script src="{% static 'rmcsite/js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+<script src="{% static 'rmcsite/js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'rmcsite/js/appear.js'%}"></script>
+<script src="{% static 'rmcsite/js/owl.js' %}"></script>
+<script src="{% static 'rmcsite/js/wow.js' %}"></script>
+<script src="{% static 'rmcsite/js/jquery-ui.js' %}"></script>
+<script src="{% static 'rmcsite/js/main.js' %}"></script>
+
+<!--Google Map APi Key-->
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyDTPlX-43R1TpcQUyWjFgiSfL_BiGxslZU"></script>
+<script src="{% static 'rmcsite/js/map-script.js' %}"></script>
+<!--End Google Map APi-->
+
+</body>
+</html>
